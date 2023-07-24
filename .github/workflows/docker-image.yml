@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v2
         with: 
           repository: 'csyeob/hostsvc-cd'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHAB_TOKEN }}
       - name: 2. Change Docker Tag
         run: |
           sed -i "s/image: csyeob\/node-app:.*/images: csyeob\/node-app:${{ github.sha }}/g" hostservice-deploy.yaml
