@@ -35,7 +35,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: 2. Change Docker Tag
         run: |
-          cat test.yaml | sed "s/image: csyeob\/node-app:.*/images: dangtong\node-app:${{ github.sha }}/g" hostservice-deploy.yaml
+          cat test.yaml | sed "s/image: csyeob\/node-app:.*/images: csyeob\node-app:${{ github.sha }}/g" hostservice-deploy.yaml
           git config --global user.email "csyeob@gmail.com"
           git config --global user.name "csyeob"
           git commit -am "triggered by github action"
